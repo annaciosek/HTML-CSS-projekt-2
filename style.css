@@ -338,6 +338,8 @@ section:not(#hero-section) {
   .footer {
     flex-direction: row;
     justify-content: space-between;
+  }
+  #footer {
     padding: 24px 0 16px 0;
   }
   #footer p {
