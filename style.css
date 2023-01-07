@@ -9,7 +9,7 @@
 }
 
 /*
------------------------ General -----------------------
+----------------------- 1 - GENERAL -----------------------
 */
 
 html {
@@ -27,12 +27,6 @@ body {
 .container {
   width: 94%;
   margin: 0 auto;
-}
-
-@media screen and (min-width: 992px) {
-  .container {
-    width: 960px;
-  }
 }
 
 strong,
@@ -57,13 +51,6 @@ h2 {
   text-align: center;
 }
 
-@media screen and (min-width: 600px) {
-  h2 {
-    text-align: left;
-    margin-bottom: 80px;
-  }
-}
-
 .white {
   color: var(--white);
 }
@@ -80,7 +67,7 @@ section:not(#hero-section) {
 }
 
 /*
------------------------ Header -----------------------
+----------------------- 2 - STYLING -----------------------
 */
 
 #header {
@@ -98,12 +85,6 @@ section:not(#hero-section) {
   display: none;
 }
 
-@media screen and (min-width: 600px) {
-  .navigation {
-    display: flex;
-  }
-}
-
 .navigation li:not(:last-child) {
   margin-right: 46px;
 }
@@ -117,13 +98,9 @@ section:not(#hero-section) {
   font-weight: 700;
 }
 
-.kontakt {
+.contact {
   cursor: not-allowed;
 }
-
-/*
------------------------ Hero -----------------------
-*/
 
 #hero-section {
   background-image: url("images/tlo-sekcji.jpg");
@@ -131,13 +108,6 @@ section:not(#hero-section) {
   background-size: cover;
   position: relative;
   padding: 190px 0;
-}
-
-@media screen and (min-width: 992px) {
-  #hero-section {
-    height: 100vh;
-    padding: 0;
-  }
 }
 
 .overlay {
@@ -158,12 +128,6 @@ section:not(#hero-section) {
   z-index: 2;
 }
 
-@media screen and (min-width: 992px) {
-  .hero {
-    padding-right: 40%;
-  }
-}
-
 .hero p {
   font-weight: 700;
   margin-bottom: 42px;
@@ -178,17 +142,6 @@ section:not(#hero-section) {
   display: inline-block;
   transition: 1s;
 }
-
-@media (hover: hover) {
-  .hero a:hover {
-    background-color: var(--white);
-    color: var(--black);
-  }
-}
-
-/*
------------------------ About -----------------------
-*/
 
 .our-team {
   display: flex;
@@ -222,27 +175,6 @@ section:not(#hero-section) {
   flex-shrink: 0;
 }
 
-@media screen and (min-width: 600px) {
-  .our-team {
-    flex-direction: row;
-    gap: 60px;
-  }
-  .our-team:nth-of-type(even) {
-    flex-direction: row-reverse;
-    text-align: right;
-  }
-}
-
-@media screen and (min-width: 600px) and (max-width: 992px) {
-  .our-team {
-    gap: 42px;
-  }
-}
-
-/*
------------------------ Services -----------------------
-*/
-
 #services-section {
   background-color: var(--blue);
 }
@@ -266,11 +198,6 @@ section:not(#hero-section) {
   position: relative;
   transition: 0.5s all;
 }
-@media (hover: hover) {
-  .services-single:hover {
-    transform: scale(1.05);
-  }
-}
 
 .services-single:first-child::before {
   content: "";
@@ -287,31 +214,6 @@ section:not(#hero-section) {
   content: "(nowość)";
   font-size: 18px;
 }
-
-@media screen and (min-width: 600px) {
-  .services {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 42px;
-  }
-}
-@media screen and (min-width: 992px) {
-  .services {
-    width: 75%; /* (3 boxes + gaps) divided by container width */
-    grid-template-columns: repeat(3, 1fr);
-    gap: 63px;
-  }
-  .services-single:first-child::before {
-    width: 22px;
-    height: 22px;
-    top: -11px;
-    left: -11px;
-  }
-}
-
-/*
------------------------ Footer -----------------------
-*/
 
 #footer {
   background-color: var(--gray);
@@ -334,7 +236,31 @@ section:not(#hero-section) {
   text-align: center;
 }
 
+/*
+----------------------- 3 - MEDIA QUERIES -----------------------
+*/
+
 @media screen and (min-width: 600px) {
+  h2 {
+    text-align: left;
+    margin-bottom: 80px;
+  }
+  .navigation {
+    display: flex;
+  }
+  .our-team {
+    flex-direction: row;
+    gap: 60px;
+  }
+  .our-team:nth-of-type(even) {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+  .services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 42px;
+  }
   .footer {
     flex-direction: row;
     justify-content: space-between;
@@ -344,5 +270,45 @@ section:not(#hero-section) {
   }
   #footer p {
     text-align: left;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 992px) {
+  .our-team {
+    gap: 42px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+  #hero-section {
+    height: 100vh;
+    padding: 0;
+  }
+  .hero {
+    padding-right: 40%;
+  }
+  .services {
+    width: 75%; /* (3 boxes + gaps) divided by container width */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 63px;
+  }
+  .services-single:first-child::before {
+    width: 22px;
+    height: 22px;
+    top: -11px;
+    left: -11px;
+  }
+}
+
+@media (hover: hover) {
+  .hero a:hover {
+    background-color: var(--white);
+    color: var(--black);
+  }
+  .services-single:hover {
+    transform: scale(1.05);
   }
 }
